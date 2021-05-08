@@ -230,7 +230,7 @@ label {
 }
 
 button {
-  border-radius: 0;
+  border-radius: 5;
 }
 
 button:focus {
@@ -6074,7 +6074,7 @@ a.close.disabled {
 }
 
 .bg-primary {
-  background-color: #1abc9c !important;
+  background-color: #ffffff !important;
 }
 
 a.bg-primary:hover, a.bg-primary:focus,
@@ -9772,7 +9772,7 @@ button.bg-dark:focus {
 }
 
 .text-white {
-  color: #fff !important;
+  color: rgb(0, 0, 0) !important;
 }
 
 .text-primary {

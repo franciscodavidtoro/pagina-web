@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{% endblock title %}
+
+
+{% block content %}
+
+<header class="masthead bg-primary text-white text-center">
+    <div class="container d-flex align-items-center flex-column">
+        <!-- tabla con imagenes-->
+        <table class="default">
+            <td><img height="180" src="{% static 'assets/img/image.png' %}" alt="" /></td>
+            <td><img height="180" src="{% static 'assets/img/image(1).png' %}" alt="" /></td>
+            <td><img height="180" src="{% static 'assets/img/image(2).png' %}" alt="" /></td>
+        </table>
+        <!--divisor de los datos -->
+        <div class="divider-custom divider-light">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <!-- subtitulo-->
+        <p class="masthead-subheading font-weight-light mb-0"> Tenemos todo lo que se nesesita para la ingenieria
+            electrica, electronica y automatisación</p>
+    </div>
+</header>
+<a href='tienda'><div style="text-align:center">   
+    <button>Comenzar ya</button>
+</div></a>
+
+
+
+
+{% endblock content %}
