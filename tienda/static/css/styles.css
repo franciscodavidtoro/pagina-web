@@ -160,12 +160,12 @@ sup {
 }
 
 a {
-  color: #ffffff;
+  color: #000000c5;
   text-decoration: none;
   background-color: transparent;
 }
 a:hover {
-  color: #a7a7a7;
+  color: #575555;
   text-decoration: underline;
 }
 
@@ -177,6 +177,8 @@ a:not([href]):not([class]):hover {
   color: inherit;
   text-decoration: none;
 }
+
+
 
 pre,
 code,
@@ -359,6 +361,18 @@ template {
   display: none !important;
 }
 
+.bt1 {
+  text-align:center;
+  border-color: #747474;
+  border-width: 9px;
+}
+
+.bt2 {
+  text-align:center;
+  border-color: #504e4e;
+  border-width: 4px;
+}
+
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   margin-bottom: 0.5rem;
@@ -377,6 +391,8 @@ h2, .h2 {
 
 h3, .h3 {
   font-size: 1.75rem;
+  color: #000000;
+  font-weight: 400;
 }
 
 h4, .h4 {
@@ -3879,6 +3895,7 @@ input[type=button].btn-block {
 .nav-link {
   display: block;
   padding: 0.5rem 1rem;
+  color:#ffffff
 }
 .nav-link:hover, .nav-link:focus {
   text-decoration: none;

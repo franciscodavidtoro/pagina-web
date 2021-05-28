@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}--{{ prod.nombre }}{% endblock title %}
+
+
+{% block content %}
+
+<div style="margin:80px">
+    <h4>Comprar {{ prod.nombre }} por {{ prod.precio }}$</h4>
+    <p>
+        Por favor escriba su email,nombre, algún numero de contacto y si se necesita alguna especificación importante en el producto.
+    </p>
+    <form method="post">
+    {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit">Submit</button>
+    </form>
+</div>
+{% endblock content %}

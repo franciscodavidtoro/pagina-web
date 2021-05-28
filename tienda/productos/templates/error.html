@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}ERROR{% endblock title %}
+
+
+{% block content %}
+
+<h2>A ocurido un error</h2><a href="{% url 'tienda'%}">
+    <div style="text-align:center">
+        <button class="bt1">Volver a la tienda</button>
+    </div>
+</a>
+
+
+{% endblock content %}

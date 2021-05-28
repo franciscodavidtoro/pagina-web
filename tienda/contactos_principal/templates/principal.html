@@ -6,7 +6,7 @@
 
 {% block content %}
 
-<header class="masthead bg-primary text-white text-center">
+
     <div class="container d-flex align-items-center flex-column">
         <!-- tabla con imagenes-->
         <table class="default">
@@ -21,13 +21,15 @@
             <div class="divider-custom-line"></div>
         </div>
         <!-- subtitulo-->
-        <p class="masthead-subheading font-weight-light mb-0"> Tenemos todo lo que se nesesita para la ingenieria
-            electrica, electronica y automatisación</p>
+        <h3 class="masthead-subheading font-weight-light mb-0"> Tenemos todo lo que se nesesita para la ingenieria
+            electrica, electronica y automatisación</h3>
     </div>
-</header>
-<a href='tienda'><div style="text-align:center">   
-    <button>Comenzar ya</button>
-</div></a>
+
+<a href="{% url 'tienda'%}">
+    <div style="text-align:center">
+        <button class="bt2">!Comenzar ya!</button>
+    </div>
+</a>
 
 
 

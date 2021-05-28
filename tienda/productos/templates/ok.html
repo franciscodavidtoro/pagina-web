@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Compra exitosa{% endblock title %}
+
+
+{% block content %}
+
+<h2>La compra a sido exitosa lo contactaremos pronto</h2><a href="{% url 'tienda'%}">
+    <div style="text-align:center">
+        <button class="bt1">Seguir comprando</button>
+    </div>
+</a>
+
+
+{% endblock content %}

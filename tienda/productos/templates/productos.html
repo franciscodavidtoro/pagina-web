@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ prod.nombre }}{% endblock title %}
+
+
+{% block content %}
+
+<table class="default">
+    
+    <td> <img height="250" src="{{ prod.imagen.url }}" alt="{{ prod.nombre }}">
+        
+            <h2> {{ prod.nombre }}</h2>
+            <hr>
+            <h2 >{{ prod.precio}}$</h2> </td>
+            
+        
+    
+
+            <td><h3>{{ prod.descripcion }}</h3><a href="{% url 'compra' prod.id %}">
+                <div style="text-align:center">
+                    <button class="bt1">Comprar</button>
+                </div>
+            </a></td>
+</table>
+{% endblock content %}

@@ -6,22 +6,26 @@
 
 {% block content %}
 {% if prod%}
+
 {% for produ in prod %}
-{% if forloop.first%}<div class="row">{% endif %}
-    <div class="col-3">
-        <div class="card">
-            <img class="card-img-top" height="180" src="{{ produ.imagen.url }}" alt="{{ produ.nombre }}">
-            <div class="card-body">
-                <h5 class="card-title">{{ produ.nombre }}</h5>
-                <hr>
-                <h6 class="card-subtitle">{{ produ.precio}}</h6>
-            </div>
+    {% if forloop.first%}<div class="row">{% endif %}
+        <div class="col-3">
+            <a href="producto/{{ produ.id }}">
+                <div class="card">
+                    <img class="card-img-top" height="180" src="{{ produ.imagen.url }}" alt="{{ produ.nombre }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ produ.nombre }}</h5>
+                        <hr>
+                        <h6 class="card-subtitle">{{ produ.precio}}$</h6>
+                    </div>
+                </div>
+            </a>
         </div>
+        {% if forloop.counter|divisibleby:5 %}
     </div>
-    {% if forloop.counter|divisibleby:5 %}
-</div>
-</div class="row">{% endif %}
-{% if forloop.last %}</div>{% endif %}
+    </div class="row">{% endif %}
+    {% if forloop.last %}</div>{% endif %}
 {% endfor %}
+
 {% endif %}
 {% endblock content %}
