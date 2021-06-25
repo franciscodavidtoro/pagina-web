@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load static %}
 
 {% block title %}- Tienda{% endblock title %}
 
@@ -7,10 +7,28 @@
 {% block content %}
 {% if prod%}
 
+<div class="container__grid">
+    <div>
+    </div>
+    <div>
+        <h3>CATEGORIAS</h3>
+        {% for ca in cat %}
+        <a href="/categoria/{{ ca.id }}">{{ ca.nombre }}</a>
+        <br>
+        {% endfor %}
+
+
+
+      
+    </div>
+    <div>
+        
+    </div>
+    <div>
 {% for produ in prod %}
     {% if forloop.first%}<div class="row">{% endif %}
         <div class="col-3">
-            <a href="producto/{{ produ.id }}">
+            <a href="/producto/{{ produ.id }}">
                 <div class="card">
                     <img class="card-img-top" height="180" src="{{ produ.imagen.url }}" alt="{{ produ.nombre }}">
                     <div class="card-body">
@@ -21,11 +39,24 @@
                 </div>
             </a>
         </div>
-        {% if forloop.counter|divisibleby:5 %}
+        {% if forloop.counter|divisibleby:4 %}
     </div>
-    </div class="row">{% endif %}
-    {% if forloop.last %}</div>{% endif %}
+    <div class="row">
+    {% endif %}
+    {% if forloop.last %}
+</div>
+{% endif %}
 {% endfor %}
+</div>
+</div>
+{% else %}
+
+<h2>NO AHI PRODUCTOS</h2>
+
 
 {% endif %}
+
+
+
+
 {% endblock content %}

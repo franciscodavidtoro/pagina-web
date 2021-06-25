@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import producto
+from .models import producto, categoria
 from .forms import ContactForm
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse
@@ -8,8 +8,15 @@ from django.http import HttpResponse
 
 def tienda(request):
     prod = producto.objects.all()
-    return render(request, "tienda.html", {"prod": prod})
+    cat = categoria.objects.all()
+    context={"prod": prod, "cat": cat}
+    return render(request, "tienda.html", context)
 
+def categorias(request, ids):
+    prod = producto.objects.filter(categoria=ids)
+    cat = categoria.objects.all()
+    context={"prod": prod, "cat": cat}
+    return render(request, "tienda.html", context)
 
 def verproducto(request, ids): # obtengo la bariable ids para crear la urldinamica
     obj = producto.objects.get(id=ids) # combienro ids en la id de la bace de datos
@@ -18,8 +25,7 @@ def verproducto(request, ids): # obtengo la bariable ids para crear la urldinami
     }
     return render(request, "productos.html", context)
 
-
-def contact(request, ids):
+def correo(request, ids):
     if request.method == 'GET': # get es obtener los datos sino se asume que se envian datos al server
         obj = producto.objects.get(id=ids)
         
