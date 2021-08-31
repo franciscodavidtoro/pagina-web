@@ -15,7 +15,8 @@ def tienda(request):
 def categorias(request, ids):
     prod = producto.objects.filter(categoria=ids)
     cat = categoria.objects.all()
-    context={"prod": prod, "cat": cat}
+    nom= categoria.objects.get(id=ids)
+    context={"prod": prod, "cat": cat, "nom": nom}
     return render(request, "tienda.html", context)
 
 def verproducto(request, ids): # obtengo la bariable ids para crear la urldinamica

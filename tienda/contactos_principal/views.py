@@ -6,3 +6,6 @@ def prin(request):
 
 def cont(request):
     return render(request, 'contactos.html')
+
+def acer(request):
+    return render(request, 'acercade.html')

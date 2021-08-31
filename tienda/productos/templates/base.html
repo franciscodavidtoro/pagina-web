@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>Metalandes {% block title %} {% endblock %}</title>
     <!-- El titulo de la pagina con un bloque para rellenar posteriormente -->
-    <link rel="icon" type="image/x-icon" href="{% static 'assets/img/favicon.ico' %}" />
+    <link rel="icon" type="image/x-icon"  href="{% static 'assets/img/favicon.ico' %}" />
     <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
 </head>
 
@@ -19,26 +19,22 @@
             <a class="navbar-brand" href="/">
                 <img src="{% static 'assets/img/metalandeslogo.ico' %}" alt="">
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="nav-link" href="contactos">Contactos</a>
-                    <a class="nav-link" href="{% url 'tienda'%}">tienda</a>
-                </div>
-            </div>
+           
+            
+                    <a class="nav-link" href="{% url 'contactos' %}">Contactos</a>
+                    <a class="nav-link" href="{% url 'tienda'%}">Tienda</a>
+                    <a class="nav-link" href="{% url 'nosotros'%}">Nosotros</a>
         </div>
     </nav>
     <body>
     <div class="container mt-3">
-        <header class="masthead bg-primary text-white text-center">
+        <header class="masthead bg-primary text-white text-center" >
         {% block content %}{% endblock content %}
         <!-- Un bloque para poner contenido -->
     </header>
     </div>
 </body>
+<footer></footer>
 
 </html>
 

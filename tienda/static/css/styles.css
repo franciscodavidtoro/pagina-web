@@ -11,6 +11,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 :root {
+ 
   --blue: #007bff;
   --indigo: #6610f2;
   --purple: #6f42c1;
@@ -382,7 +383,7 @@ h1, h2, h3, h4, h5, h6,
 }
 
 h1, .h1 {
-  font-size: 2.5rem;
+  font-size: 1rem;
 }
 
 h2, .h2 {
@@ -3874,9 +3875,10 @@ input[type=button].btn-block {
 }
 
 .nav-link {
-  display: block;
+  
   padding: 0.5rem 1rem;
-  color:#ffffff
+  color:#ffffff;
+  justify-content: right
 }
 .nav-link:hover, .nav-link:focus {
   text-decoration: none;
@@ -3964,7 +3966,7 @@ input[type=button].btn-block {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
+  justify-content: left;
 }
 .navbar-brand {
   display: inline-block;
@@ -4315,13 +4317,15 @@ input[type=button].btn-block {
 .card {
   position: relative;
   display: flex;
-  flex-direction: column;
+  flex-direction:column;
   min-width: 0;
   word-wrap: break-word;
   background-color: #fff;
   background-clip: border-box;
   border: 0.125rem solid rgba(0, 0, 0, 0.125);
   border-radius: 0.5rem;
+  margin: 1rem;
+  float:left;
 }
 .card > hr {
   margin-right: 0;
@@ -4413,11 +4417,14 @@ input[type=button].btn-block {
   border-radius: 0.375rem;
 }
 
+
 .card-img,
 .card-img-top,
 .card-img-bottom {
   flex-shrink: 0;
-  width: 100%;
+  vertical-align: middle;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .card-img,
@@ -10110,7 +10117,7 @@ h3 {
   }
 }
 .masthead {
-  padding-top: calc(6rem + 74px);
+  padding-top: calc(1rem + 104px);
   padding-bottom: 6rem;
 }
 .masthead .masthead-heading {
@@ -10126,7 +10133,7 @@ h3 {
 
 @media (min-width: 992px) {
   .masthead {
-    padding-top: calc(6rem + 104px);
+    padding-top: calc(1rem + 104px);
     padding-bottom: 6rem;
   }
   .masthead .masthead-heading {
@@ -10227,11 +10234,14 @@ form .row:first-child .floating-label-form-group {
   border-top: 1px solid #e9ecef;
 }
 
-.footer {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
-  background-color: #2c3e50;
-  color: #fff;
+footer {
+  background-color: black;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  color: white;
 }
 
 .copyright {
@@ -10246,8 +10256,106 @@ form .row:first-child .floating-label-form-group {
       
   }
 
-.grid{
-  display: grid;
-      grid-template-columns: 1fr 1fr;
+.centrado{
+  align-self: center;
+  display: table-cell;
+  vertical-align: middle;
+}
 
+.titulo{
+  font-size: 3rem;
+}
+
+.enlace{
+  color: #007bff;
+}
+
+.enlace:hover {
+  color: #007bff;
+  text-decoration: underline;
+}
+
+/* Diseño para celulares */
+.container__grid{
+
+  display: grid;
+      grid-template-columns: initial;
+      
+  }
+
+  .grid{
+    display: grid;
+        grid-template-columns: initial ;
+  
+  }
+
+.slider{
+  display: flex;
+  width: 100%;
+  margin: auto;
+  overflow:hidden;
+  text-align: left;
+}
+.slider ul{
+  display: flex;
+  padding: 0;
+  width: 4000px;
+  text-align: left;
+  margin: 0;
+ margin-left: 0px;
+  
+ animation: slider 15s infinite alternate linear;
+}
+.slider li{
+  width: 350px;
+  list-style: none;
+  text-align: left;
+  margin: 0;
+  margin-right: -25px;
+}
+.slider img{
+  display: block;
+  height: 300px;
+  width: 300px;
+  padding: 0;
+  text-align: left;
+  margin: 0;
+  margin-right: -50px;
+  border: rgb(207, 26, 26) solid 10px;
+  border-radius: 20%;
+}
+@keyframes slider {
+  0% {margin-left:0%;}
+  100% {margin-left: -130%;}
+}
+
+
+/* Diseño para tabletas */ 
+@media screen and (min-width: 800px) {
+	.container__grid{
+
+    display: grid;
+        grid-template-columns: 1fr 2fr 1fr 12fr;
+        
+    }
+    .grid{
+      display: grid;
+          grid-template-columns: initial ;
+    
+    }
+}
+
+/* Diseño para PC */ 
+@media screen and (min-width: 1025px) {
+	.container__grid{
+
+    display: grid;
+        grid-template-columns: 1fr 2fr 1fr 12fr;
+        
+    }
+    .grid{
+      display: grid;
+          grid-template-columns: 1fr 1fr ;
+    
+    }
 }

@@ -19,7 +19,7 @@
     <div>
         <h3>{{ prod.descripcion }}</h3>
         <br>
-        <h3>Categoria: {{ prod.categoria }}</h3>
+        <h3>Categoria:</h3><a href="{% url 'categoria' prod.categoria.id %}"><h3 class="enlace"> {{ prod.categoria }}</h3></a>
         <br>
         <a href="{% url 'compra' prod.id %}">
             <div style="text-align:center">
